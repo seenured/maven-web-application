@@ -1,0 +1,57 @@
+pipeline{
+    
+agent any
+
+tools{
+maven "maven3.6.2"
+}
+
+
+options{
+buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+ 
+timestamps()
+}
+
+triggers{
+//Poll SCM
+pollSCM('* * * * *')
+//Build Periodically
+cron('* * * * *')
+//GitHubWeb hook
+//githubPush()
+
+}
+stages{
+    stage('CheskOutCode'){
+        steps{
+            git branch: 'development', credentialsId: 'f281161b-1862-4a06-8210-38cea3c3b7bd', url: 'https://github.com/seenured/maven-web-application.git'
+        }
+    }
+ stage('Build'){
+     steps{
+         sh "mvn clean package"
+     }
+ }
+ stage('ExcuteSonarQubeReport'){
+     steps{
+         sh "mvn sonar:sonar"
+}
+}
+ stage('UploadArtifactsintoNexusRepo'){
+     steps{
+         sh "mvn clean deploy"
+}
+}
+stage('DeploytheAppintoTomcat')
+    {
+     steps{    
+         sshagent(['3bdbcb62-d997-4497-a74d-ef0a8cb24c2d']) {
+             sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.127.100.81:/opt/apache-tomcat-9.0.53/webapps"        
+    }
+    
+     }
+    }
+    
+}
+}
