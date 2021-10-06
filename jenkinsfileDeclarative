@@ -12,17 +12,15 @@ buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', 
  
 timestamps()
 }
-*/
 triggers{
 //Poll SCM
-pollSCM('* * * * *')
+//pollSCM('* * * * *')
 //Build Periodically
-cron('* * * * *')
+//cron('* * * * *')
 //GitHubWeb hook
 //githubPush()
 
 }
-/*
 stages{
     stage('CheskOutCode'){
         steps{
