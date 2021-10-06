@@ -12,7 +12,7 @@ buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', 
  
 timestamps()
 }
-
+*/
 triggers{
 //Poll SCM
 pollSCM('* * * * *')
@@ -22,6 +22,7 @@ cron('* * * * *')
 //githubPush()
 
 }
+/*
 stages{
     stage('CheskOutCode'){
         steps{
