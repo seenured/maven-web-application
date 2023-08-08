@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Software Solutions. Bengaluru </h1>
-<h1 align="center"> Mithun Software Solutions- Very Good Training center for DevOps with AWS in Maratha Halli Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
+<h1 align="center">Welcome to Mithun Technologies. Ph No: +91-9980923226 ,+91-9980923216 Marathahalli,Bengaluru,Karnataka </h1>
+<h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
@@ -24,6 +24,10 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <br>
 <%out.println("Server IP Address :: "+ip);%>
 </h1>
+<br>
+<h1><h3> Client Side IP Address </h3><br>
+<%out.print( "Client IP Address :: " + request.getRemoteAddr() ); %><br>
+<%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
 <hr>
 <div style="text-align: center;">
 	<span>
@@ -33,7 +37,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		Mithun Technologies, 
 		Martha Halli, Above ICICI Bank, Beside Meghana Foods,
 		Bangalore,
-		+91-9980923226
+		+91-9980923226,+91-9900012028
 		devopstrainingblr@gmail.com
 		<br>
 		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
@@ -44,7 +48,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <hr>
 <p align=center>Mithun Technologies - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2019 by <a href="http://mithuntechnologies.com/">Mithun Technologies</a> </small></p>
+<p align=center><small>Copyrights 2022 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
 
 </body>
 </html>
